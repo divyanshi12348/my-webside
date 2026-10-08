@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title> my do to list</title>
+    <style>
+        body{
+            background-color:lightblue;
+            font-family:Arial;
+        }
+        .container{
+            width:600px;
+            margin:50px auto;
+            padding:30px;
+            background-color:white;
+            border-radius:10px;
+        }
+        h1{
+            text-align:center;
+            color:blue;
+        }
+        input{
+            width:65px;
+            padding:12px;
+        }
+        #addButton{
+            padding:12px 20px;
+            background-color: blue;
+            color:white;
+            border-radius:5px;
+        }
+        h2{
+            color:green;
+        }
+        ul{
+            padding:o;
+        }
+        li{
+            background-color: orange;
+            padding:15px;
+            margin:10px 0PX;
+            border-radius:5px;
+        }
+        li button{
+            margin-left:20px;
+            background-color:red;
+            color:white;
+            border:none;
+            padding: 8px 12px;
+            border-radius:5px;
+        }
+        #taskInput{
+            width:250px;
+            padding:12px;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h1>my to do list</h1>
+        <input type="text"id="taskInput"
+        placeholder="Enter your task">
+        <button id="addButton">Add Task</button>
+        <h2>my task</h2>
+        <ul id="taskList">
+        </ul>
+    </div>
+    <script>
+        let input=document.getElementById("taskInput");
+        let addButton=
+        document.getElementById("addButton");
+        let
+        taskList=document.getElementById("taskList");
+        addButton.onclick=function(){
+            let task=input.value;
+            if(task===""){
+                alert("please enter a task");
+                return;
+            }
+            let li=document.createElement("li");
+            li.innerText=task;
+            let deleteButton=
+            document.createElement("button");
+            deleteButton.innerText="Delete";
+            deleteButton.onclick=function(){
+                li.remove();
+            };
+            li.appendChild(deleteButton);
+            taskList.appendChild(li);
+            input.value="";
+        };
+        </script>
+</body>
+</html>
